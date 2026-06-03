@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* ===== RESET & BASE ===== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; font-size: 16px; }
         body {
@@ -22,6 +23,8 @@
         }
         a { text-decoration: none; color: inherit; }
         img { max-width: 100%; display: block; }
+
+        /* ===== TYPOGRAPHY ===== */
         h1, h2, h3, h4, .orbitron {
             font-family: 'Orbitron', 'Inter', monospace;
             font-weight: 700;
@@ -35,6 +38,8 @@
         }
         .gold-text { color: #ffd700; }
         .blue-text { color: #00d4ff; }
+
+        /* ===== ANIMATED BG ===== */
         #particle-bg {
             position: fixed;
             top: 0; left: 0;
@@ -60,6 +65,8 @@
         .particle:nth-child(odd) { background: #ffd700; animation-duration: 18s; animation-delay: -2s; }
         .particle:nth-child(3n) { width: 6px; height: 6px; animation-duration: 22s; }
         .particle:nth-child(5n) { width: 3px; height: 3px; animation-duration: 14s; }
+
+        /* ===== GLASSMORPHIC ===== */
         .glass {
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(20px);
@@ -82,12 +89,16 @@
             border-radius: 16px;
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.06);
         }
+
+        /* ===== NEON GLOW ===== */
         .neon-glow {
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), 0 0 60px rgba(0, 212, 255, 0.05);
         }
         .neon-gold {
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.2), 0 0 60px rgba(255, 215, 0, 0.05);
         }
+
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -95,6 +106,7 @@
             padding: 1rem 2rem;
             background: rgba(5, 5, 5, 0.85);
             backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
@@ -155,6 +167,8 @@
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
+
+        /* ===== SECTIONS ===== */
         section { position: relative; z-index: 1; }
         .section-label {
             text-align: center;
@@ -179,6 +193,8 @@
             margin: 0 auto 3rem;
             font-size: 1.05rem;
         }
+
+        /* ===== HERO ===== */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -289,7 +305,9 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-        .hero-stat { text-align: center; }
+        .hero-stat {
+            text-align: center;
+        }
         .hero-stat .num {
             font-family: 'Orbitron', monospace;
             font-size: 2rem;
@@ -306,7 +324,11 @@
             letter-spacing: 0.1em;
             margin-top: 0.25rem;
         }
-        #comparison { padding: 6rem 2rem; }
+
+        /* ===== COMPARISON TABLE ===== */
+        #comparison {
+            padding: 6rem 2rem;
+        }
         .table-wrapper {
             max-width: 1200px;
             margin: 0 auto;
@@ -400,6 +422,28 @@
         }
         .kyc-full { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0,212,255,0.15); }
         .kyc-none { background: rgba(255, 215, 0, 0.1); color: #ffd700; border: 1px solid rgba(255,215,0,0.15); }
+        .tag-yellow { background: rgba(234, 179, 8, 0.1); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.15); }
+        .tag-blue { background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0,212,255,0.15); }
+        .tag-gray { background: rgba(255,255,255,0.05); color: #999; border: 1px solid rgba(255,255,255,0.08); }
+        .benefit-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+        .benefit-tag {
+            display: inline-block;
+            font-size: 0.6rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .bt-blue { background: rgba(0, 212, 255, 0.08); color: #00d4ff; border: 1px solid rgba(0,212,255,0.12); }
+        .bt-gold { background: rgba(255, 215, 0, 0.08); color: #ffd700; border: 1px solid rgba(255,215,0,0.12); }
+        .bt-gray { background: rgba(255,255,255,0.04); color: #aaa; border: 1px solid rgba(255,255,255,0.06); }
+
+
+        /* ===== CTA BUTTONS IN TABLE ===== */
         .btn-affiliate {
             display: inline-flex;
             align-items: center;
@@ -453,7 +497,11 @@
             border-color: #00d4ff;
             transform: translateY(-2px);
         }
-        #trust { padding: 6rem 2rem; }
+
+        /* ===== TRUST GRID ===== */
+        #trust {
+            padding: 6rem 2rem;
+        }
         .trust-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -498,7 +546,11 @@
             color: #999;
             line-height: 1.5;
         }
-        #faq { padding: 6rem 2rem; }
+
+        /* ===== FAQ ===== */
+        #faq {
+            padding: 6rem 2rem;
+        }
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -545,7 +597,9 @@
             border-color: rgba(0, 212, 255, 0.2);
             border-radius: 16px 16px 0 0;
         }
-        .faq-item.active .faq-question .icon { transform: rotate(180deg); }
+        .faq-item.active .faq-question .icon {
+            transform: rotate(180deg);
+        }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
@@ -567,6 +621,8 @@
             line-height: 1.7;
         }
         .faq-answer strong { color: #fff; }
+
+        /* ===== FOOTER ===== */
         footer {
             position: relative;
             z-index: 1;
@@ -597,6 +653,8 @@
             color: #998;
         }
         footer .affiliate-disclosure i { color: #ffd700; margin-right: 0.4rem; }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             header { padding: 0.75rem 1rem; }
             .logo-text { font-size: 0.9rem; }
@@ -628,6 +686,220 @@
             nav a { margin-left: 0.5rem; font-size: 0.65rem; }
             .nav-cta { padding: 0.3rem 0.6rem; font-size: 0.65rem; }
         }
+
+        
+        /* ===== CONTACT FORM ===== */
+        #contact {
+            padding: 6rem 2rem;
+        }
+        .contact-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ccc;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.06);
+            background: rgba(255,255,255,0.06);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666;
+        }
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #00d4ff, #0055ff);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            justify-content: center;
+        }
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(135deg, #00d4ff, #ffd700, #00d4ff);
+            background-size: 200% 200%;
+            border-radius: 13px;
+            z-index: -1;
+            animation: gradient-shift 3s ease infinite;
+            opacity: 0.5;
+        }
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: #ffd700;
+            font-weight: 600;
+        }
+        .form-success i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+
+        /* ===== FOOTER COLUMNS ===== */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 2.5rem;
+            text-align: left;
+        }
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .footer-logo {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .footer-logo span { color: #00d4ff; }
+        .footer-desc {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.6;
+        }
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .social-link:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            transform: translateY(-2px);
+        }
+        .footer-heading {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+        .footer-link {
+            font-size: 0.85rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            color: #00d4ff;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .footer-bottom p {
+            font-size: 0.7rem;
+            color: #555;
+        }
+        footer .affiliate-disclosure {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            display: inline-block;
+            font-size: 0.7rem;
+            color: #998;
+            margin-top: 0.5rem;
+        }
+        footer .affiliate-disclosure i { color: #ffd700; margin-right: 0.4rem; }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            .footer-col {
+                align-items: center;
+            }
+            .footer-social {
+                justify-content: center;
+            }
+            .footer-bottom p {
+                font-size: 0.65rem;
+            }
+            #contact { padding: 4rem 1rem; }
+            .contact-wrapper form { padding: 1.5rem !important; }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -640,7 +912,10 @@
     </style>
 </head>
 <body>
+    <!-- ===== PARTICLE BACKGROUND ===== -->
     <div id="particle-bg" aria-hidden="true"></div>
+
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="logo">
             <div class="logo-icon">N</div>
@@ -657,6 +932,7 @@
         </nav>
     </header>
 
+    <!-- ===== HERO ===== -->
     <section id="hero">
         <div class="badge"><i class="fas fa-bolt"></i> Live Now — Instant Virtual Cards</div>
         <h1>
@@ -674,13 +950,26 @@
             </button>
         </div>
         <div class="hero-stats">
-            <div class="hero-stat"><div class="num">3+</div><div class="label">Top Providers</div></div>
-            <div class="hero-stat"><div class="num">$0</div><div class="label">Min. Monthly Fees</div></div>
-            <div class="hero-stat"><div class="num">100+</div><div class="label">Countries Supported</div></div>
-            <div class="hero-stat"><div class="num">5%</div><div class="label">Max Cashback</div></div>
+            <div class="hero-stat">
+                <div class="num">3+</div>
+                <div class="label">Top Providers</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">$0</div>
+                <div class="label">Min. Monthly Fees</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">100+</div>
+                <div class="label">Countries Supported</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">5%</div>
+                <div class="label">Max Cashback</div>
+            </div>
         </div>
     </section>
 
+    <!-- ===== COMPARISON TABLE ===== -->
     <section id="comparison">
         <div class="section-label reveal"><i class="fas fa-table"></i> Side-by-Side Comparison</div>
         <h2 class="section-title reveal">Which Card Is <span class="gradient-text">Right for You?</span></h2>
@@ -699,42 +988,72 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- RedotPay -->
                     <tr>
-                        <td><div class="card-name"><span class="name">RedotPay</span><span class="sub">Visa Debit Card</span></div></td>
+                        <td>
+                            <div class="card-name">
+                                <span class="name">RedotPay</span>
+                                <span class="sub">Visa Debit Card</span>
+                            </div>
+                        </td>
                         <td><span class="check-yes"><i class="fas fa-check-circle"></i></span></td>
                         <td><span class="cashback-rate">0.5% – 5%</span></td>
                         <td><span class="fee-text">From $10 virtual</span></td>
                         <td><span class="check-yes"><i class="fas fa-check-circle"></i></span></td>
                         <td><span class="kyc-tag kyc-full">Full KYC</span></td>
                         <td>
-                            <button class="btn-affiliate btn-affiliate-blue" onclick="window.open('https://affiliates.redotpay.com/login?mode=register&inviteCode=15915', '_blank')">
+                            <button class="btn-affiliate btn-affiliate-blue" onclick="window.open('https://wap.redotpay.com/en/invite/affiliates-1?utm_id=u65xix&utm_source=union&utm_uid=15915&utm_s=1a9d9905c2ea965067425c28be98938619441ae4', '_blank')">
                                 Get Card <i class="fas fa-arrow-right"></i>
                             </button>
                         </td>
                     </tr>
+                    <!-- Bybit Card -->
                     <tr>
-                        <td><div class="card-name"><span class="name">Crypto.com</span><span class="sub">Visa Debit Card</span></div></td>
+                        <td>
+                            <div class="card-name">
+                                <span class="name">Bybit Card</span>
+                                <span class="sub">Mastercard Global Network</span>
+                            </div>
+                        </td>
                         <td><span class="check-yes"><i class="fas fa-check-circle"></i></span></td>
-                        <td><span class="cashback-rate">1% – 5%</span><br><span style="font-size:0.65rem;color:#777;">Tier-based</span></td>
-                        <td><span class="fee-text">$0 with stake</span></td>
-                        <td><span class="check-yes"><i class="fas fa-check-circle"></i></span></td>
+                        <td>
+                            <div class="benefit-tags">
+                                <span class="benefit-tag bt-gold">Up to 50% Ref. Rewards</span>
+                                <span class="benefit-tag bt-blue">High Limits</span>
+                                <span class="benefit-tag bt-gray">Apple/Google Pay</span>
+                            </div>
+                        </td>
+                        <td><span class="fee-text">From $0</span></td>
+                        <td><span class="tag-yellow" style="padding:0.2rem 0.6rem;border-radius:6px;font-size:0.7rem;font-weight:600;">Instant</span></td>
                         <td><span class="kyc-tag kyc-full">Full KYC</span></td>
                         <td>
-                            <button class="btn-affiliate btn-affiliate-blue" onclick="alert('🔗 Affiliate Link: https://crypto.com/exchange/affiliate')">
-                                Get Card <i class="fas fa-arrow-right"></i>
+                            <button class="btn-affiliate btn-affiliate-gold" onclick="window.open('https://bybit.com?affiliate_id=153256&group_id=1911607&group_type=1', '_blank')">
+                                <i class="fas fa-credit-card"></i> Order Card
                             </button>
                         </td>
                     </tr>
+                    <!-- Bybit Exchange -->
                     <tr class="elite-row">
-                        <td><div class="card-name"><span class="name">NEXUS Anonymous Card <span class="elite-tag">★ ELITE</span></span><span class="sub">Bitrefill-Powered — No KYC</span></div></td>
-                        <td><span class="check-yes"><i class="fas fa-check-circle"></i></span></td>
-                        <td><span class="cashback-rate">1%</span><br><span style="font-size:0.65rem;color:#777;">Sats back</span></td>
-                        <td><span class="fee-text">$0 virtual</span></td>
-                        <td><span class="check-yes"><i class="fas fa-check-circle"></i></span></td>
-                        <td><span class="kyc-tag kyc-none">No KYC</span></td>
                         <td>
-                            <button class="btn-affiliate btn-affiliate-gold" onclick="alert('🔗 Affiliate Link: https://www.bitrefill.com/affiliates/')">
-                                <i class="fas fa-crown"></i> Get Elite Card
+                            <div class="card-name">
+                                <span class="name">Bybit Exchange</span>
+                                <span class="sub">Global Crypto Trading Platform</span>
+                            </div>
+                        </td>
+                        <td><span class="check-yes"><i class="fas fa-check-circle"></i></span></td>
+                        <td>
+                            <div class="benefit-tags">
+                                <span class="benefit-tag bt-blue">Lowest Fees</span>
+                                <span class="benefit-tag bt-gold">Secure Wallet</span>
+                                <span class="benefit-tag bt-gray">24/7 Support</span>
+                            </div>
+                        </td>
+                        <td><span class="fee-text">From 0% maker</span></td>
+                        <td><span class="tag-yellow" style="padding:0.2rem 0.6rem;border-radius:6px;font-size:0.7rem;font-weight:600;">Instant Access</span></td>
+                        <td><span class="kyc-tag kyc-full">Full KYC</span></td>
+                        <td>
+                            <button class="btn-affiliate btn-affiliate-gold" onclick="window.open('https://bybit.com?affiliate_id=153256&group_id=1911607&group_type=1', '_blank')">
+                                <i class="fas fa-rocket"></i> Sign Up Now
                             </button>
                         </td>
                     </tr>
@@ -746,6 +1065,7 @@
         </p>
     </section>
 
+    <!-- ===== TRUST & VALUE GRID ===== -->
     <section id="trust">
         <div class="section-label reveal"><i class="fas fa-shield-halved"></i> Why NEXUS?</div>
         <h2 class="section-title reveal">Built for <span class="gradient-text">Freedom &amp; Performance</span></h2>
@@ -774,6 +1094,7 @@
         </div>
     </section>
 
+    <!-- ===== FAQ ===== -->
     <section id="faq">
         <div class="section-label reveal"><i class="fas fa-circle-question"></i> FAQ</div>
         <h2 class="section-title reveal">Everything You <span class="gradient-text">Need to Know</span></h2>
@@ -785,7 +1106,7 @@
                     <span class="icon"><i class="fas fa-chevron-down"></i></span>
                 </button>
                 <div class="faq-answer">
-                    <p>A crypto debit card allows you to spend your cryptocurrency at any merchant that accepts traditional debit cards (like Visa or Mastercard). When you make a purchase, the card provider automatically converts your crypto into the local fiat currency (like USD or EUR) in real-time to complete the transaction. Most cards, like <strong>RedotPay</strong> or <strong>Crypto.com</strong>, offer both virtual cards for online shopping and physical cards for in-person use.</p>
+                    <p>A crypto debit card allows you to spend your cryptocurrency at any merchant that accepts traditional debit cards (like Visa or Mastercard). When you make a purchase, the card provider automatically converts your crypto into the local fiat currency (like USD or EUR) in real-time to complete the transaction. Most cards, like <strong>RedotPay</strong> or <strong>Bybit Card</strong>, offer both virtual cards for online shopping and physical cards for in-person use.</p>
                 </div>
             </div>
             <div class="faq-item glass">
@@ -794,7 +1115,7 @@
                     <span class="icon"><i class="fas fa-chevron-down"></i></span>
                 </button>
                 <div class="faq-answer">
-                    <p><strong>Yes, but not always.</strong> There are <strong>No-KYC</strong> or <strong>Low-KYC</strong> options like the <strong>NEXUS Anonymous Card (Bitrefill-Powered)</strong> that only require an email or phone number for basic tiers with lower spending limits (e.g., $500 – $1,000). However, to access higher limits, ATM withdrawals, or a physical card, most providers will eventually require standard ID verification due to global financial regulations.</p>
+                    <p><strong>Yes, but not always.</strong> There are <strong>No-KYC</strong> or <strong>Low-KYC</strong> options that only require an email or phone number for basic tiers with lower spending limits (e.g., $500 – $1,000). However, to access higher limits, ATM withdrawals, or a physical card, most providers will eventually require standard ID verification due to global financial regulations.</p>
                 </div>
             </div>
             <div class="faq-item glass">
@@ -803,7 +1124,7 @@
                     <span class="icon"><i class="fas fa-chevron-down"></i></span>
                 </button>
                 <div class="faq-answer">
-                    <p><strong>Crypto.com</strong> offers up to <strong>5% cashback</strong> on the highest Obsidian tier (requires significant CRO staking). <strong>RedotPay</strong> offers up to <strong>5% cashback</strong> on select merchants with fluctuating rates. For those prioritizing privacy, the <strong>NEXUS Anonymous Card</strong> offers a solid <strong>1% back in sats</strong> with <strong>zero KYC</strong>. The best choice depends on how much you're willing to stake vs. how much privacy you need.</p>
+                    <p><strong>Bybit Card</strong> offers up to <strong>8% cashback</strong> on select categories with no staking required. <strong>RedotPay</strong> offers up to <strong>5% cashback</strong> on select merchants with fluctuating rates. <strong>Bybit Exchange</strong> features <strong>up to 50% referral rewards</strong> on trading fees. The best choice depends on how much you're willing to stake vs. how much privacy you need.</p>
                 </div>
             </div>
             <div class="faq-item glass">
@@ -812,7 +1133,7 @@
                     <span class="icon"><i class="fas fa-chevron-down"></i></span>
                 </button>
                 <div class="faq-answer">
-                    <p><strong>Absolutely!</strong> Leading providers like <strong>RedotPay</strong> and the <strong>NEXUS Anonymous Card</strong> offer full integration with <strong>Apple Pay</strong> and <strong>Google Pay</strong>. Once your virtual card is issued (often instantly), you can add it to your mobile wallet and start spending immediately at contactless terminals worldwide — no physical card required.</p>
+                    <p><strong>Absolutely!</strong> Leading providers like <strong>RedotPay</strong> and <strong>Bybit Card</strong> offer full integration with <strong>Apple Pay</strong> and <strong>Google Pay</strong>. Once your virtual card is issued (often instantly), you can add it to your mobile wallet and start spending immediately at contactless terminals worldwide — no physical card required.</p>
                 </div>
             </div>
             <div class="faq-item glass">
@@ -821,22 +1142,85 @@
                     <span class="icon"><i class="fas fa-chevron-down"></i></span>
                 </button>
                 <div class="faq-answer">
-                    <p>Most modern crypto cards (<strong>RedotPay, NEXUS Anonymous Card</strong>) have <strong>$0 monthly maintenance fees</strong>. Common fees include a one-time issuance fee for the card ($10–$100), a small conversion fee (usually around <strong>1%</strong>) when swapping crypto to fiat, and ATM withdrawal fees (typically <strong>2%</strong> or a flat fee). Always check the specific fee schedule in the app before ordering.</p>
+                    <p>Most modern crypto cards (<strong>RedotPay, Bybit Card</strong>) have <strong>$0 monthly maintenance fees</strong>. Common fees include a one-time issuance fee for the card ($10–$100), a small conversion fee (usually around <strong>1%</strong>) when swapping crypto to fiat, and ATM withdrawal fees (typically <strong>2%</strong> or a flat fee). Always check the specific fee schedule in the app before ordering.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-logo">NEXUS <span>Debit</span> Division</div>
-        <div class="domain">cryptocurrencydebitcards.com</div>
-        <div class="affiliate-disclosure">
-            <i class="fas fa-handshake"></i> Affiliate Disclosure: We may earn a commission when you sign up through our links — at no extra cost to you.
+    
+    <!-- ===== CONTACT FORM ===== -->
+    <section id="contact">
+        <div class="section-label reveal"><i class="fas fa-envelope"></i> Get in Touch</div>
+        <h2 class="section-title reveal">Have a <span class="gradient-text">Question?</span></h2>
+        <p class="section-sub reveal">Reach out to our team and we'll get back to you within 24 hours.</p>
+        <div class="contact-wrapper glass-glow reveal">
+            <form id="contactForm" onsubmit="return handleContact(event)" style="padding:2.5rem;">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    Thank you! Your message has been sent. We'll be in touch soon.
+                </div>
+            </form>
         </div>
-        <p style="margin-top:1rem;font-size:0.7rem;color:#444;">© 2025 NEXUS Debit Division. All rights reserved. Not financial advice. Crypto spending at your own risk.</p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">NEXUS <span>Debit</span> Division</div>
+                <p class="footer-desc">Premium crypto debit card comparison for the modern Web3 user. Spend your crypto anywhere, anytime.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <a href="#comparison" class="footer-link">Compare Cards</a>
+                <a href="#trust" class="footer-link">Benefits</a>
+                <a href="#faq" class="footer-link">FAQ</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Top Cards</h4>
+                <span class="footer-link">RedotPay</span>
+                <span class="footer-link">Bybit Card</span>
+                <span class="footer-link">Bybit Exchange</span>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Legal</h4>
+                <span class="footer-link">Privacy Policy</span>
+                <span class="footer-link">Terms of Service</span>
+                <div class="affiliate-disclosure">
+                    <i class="fas fa-handshake"></i> We may earn a commission when you sign up through our links — at no extra cost to you.
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NEXUS Debit Division. All rights reserved. Not financial advice. Crypto spending at your own risk.</p>
+        </div>
     </footer>
 
     <script>
+        // ===== PARTICLE BACKGROUND =====
         (function createParticles() {
             const container = document.getElementById('particle-bg');
             const count = 30;
@@ -850,22 +1234,36 @@
             }
         })();
 
+        // ===== FAQ ACCORDION =====
         function toggleFAQ(btn) {
             const item = btn.closest('.faq-item');
             const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(el => { el.classList.remove('active'); });
-            if (!isActive) { item.classList.add('active'); }
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Toggle this one
+            if (!isActive) {
+                item.classList.add('active');
+            }
         }
 
+        // ===== SCROLL REVEAL =====
         (function initReveal() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
                 });
             }, { threshold: 0.10, rootMargin: '0px 0px -50px 0px' });
+
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         })();
 
+        // ===== SMOOTH ANCHOR SCROLL (fallback for older browsers) =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const target = document.querySelector(this.getAttribute('href'));
@@ -875,6 +1273,29 @@
                 }
             });
         });
+    
+        // ===== CONTACT FORM HANDLER =====
+        function handleContact(e) {
+            e.preventDefault();
+            const form = document.getElementById('contactForm');
+            const success = document.getElementById('formSuccess');
+            const btn = form.querySelector('.btn-submit');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            setTimeout(() => {
+                form.reset();
+                btn.style.display = 'none';
+                success.style.display = 'block';
+                setTimeout(() => {
+                    btn.style.display = 'flex';
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                    btn.disabled = false;
+                    success.style.display = 'none';
+                }, 4000);
+            }, 1500);
+            return false;
+        }
+
     </script>
 </body>
 </html>
